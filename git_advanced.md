@@ -4,7 +4,7 @@ Git进阶指导
 ### 高级功能
 
 - 权限管理（通常Git以项目为单位，控制每个开发者对每个项目的读、写、设置的权限）
-- 代码审核（通过pull request）
+- 代码审查（通过pull request）
 - 依赖管理（git submodule, git subtree, repo）
 
 ### 编辑提交历史
