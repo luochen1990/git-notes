@@ -63,27 +63,27 @@ git clone git://192.168.1.123/demo_repo
 
 ```shell
 git remote add -f subtree-lib git://192.168.1.123/demo_lib #添加一个叫`subtree-lib`的远端仓库，方便之后访问，`-f`选项使得add之后立即fetch一次
-git subtree add -P lib/ subtree-lib master --squash #将demo_lib的master分支合并到当前分支的`lib/`目录下，--squash选项避免引入demo_lib的提交历史
+git subtree add -P lib subtree-lib master --squash #将demo_lib的master分支合并到当前分支的`lib/`目录下，--squash选项避免引入demo_lib的提交历史（注意：lib后面不能加`/`）
 ```
 
 之后可以这样更新`demo_repo`中的`lib/`目录，使得它和`demo_lib`项目同步
 
 ```shell
 git fetch subtree-lib master
-git subtree pull -P lib/ subtree-lib master --squash
+git subtree pull -P lib subtree-lib master --squash #（注意：lib后面不能加`/`）
 ```
 
 如果你更改了`demo_repo/lib/`中的内容，可以将它上传到`demo_lib`项目
 
 ```shell
-git subtree push -P lib/ subtree-lib master
+git subtree push -P lib subtree-lib master #（注意：lib后面不能加`/`）
 ```
 
 ### 将项目`demo_repo`的子目录`lib/`导出成独立的新项目`demo_lib`
 
 ```shell
 cd demo_repo
-git subtree split -P lib/ -b lib_branch #把`lib/`这个目录的内容导出为`lib_branch`分支，执行这个命令可能需要较长时间（取决于项目历史提交的数目）
+git subtree split -P lib -b lib_branch #把`lib/`这个目录的内容导出为`lib_branch`分支，执行这个命令可能需要较长时间（取决于项目历史提交的数目）（注意：lib后面不能加`/`）
 cd ..
 mkdir demo_lib
 cd demo_lib
