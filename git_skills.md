@@ -1,0 +1,7 @@
+- .gitignore
+- .gitattributes
+- git config
+- editor
+- difftools
+- git hook
+- 在commit message里引用issue id
